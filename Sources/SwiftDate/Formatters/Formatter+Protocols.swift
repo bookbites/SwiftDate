@@ -49,7 +49,6 @@ public enum DateToStringStyles {
     case dateTimeMixed(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style)
 	case custom(_: String)
 	case standard
-    case relative(style: RelativeDateTimeFormatter.DateTimeStyle = .named, unitsStyle: RelativeDateTimeFormatter.UnitsStyle = .short)
 
 	public func toString(_ date: DateRepresentable) -> String {
 		switch self {
@@ -82,8 +81,6 @@ public enum DateToStringStyles {
                 $0.dateStyle = dateStyle
                 $0.timeStyle = timeStyle
             }).string(from: date.date)
-		case .relative(let style, let unitStyle):
-            return date.toRelative(since: DateInRegion(),  dateTimeStyle: style, unitsStyle: unitStyle)
 		}
 	}
 

@@ -14,12 +14,6 @@ import SwiftDate
 import XCTest
 
 class TestRegion: XCTestCase {
-    
-    func test() {
-        let ago5Mins = DateInRegion() - 5.minutes
-        let x = ago5Mins.toRelative(since: nil, dateTimeStyle: .named, unitsStyle: .short)
-        print(x)
-    }
 
 	func testRegionInit() {
 
